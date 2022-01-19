@@ -4,7 +4,7 @@ import React, { Fragment } from "react";
 //components
 import Pomodoro from "./Pomodoro";
 import InputThoughts from "./InputThoughts";
-// import GetThoughts from "./GetThoughts";
+import GetThoughts from "./GetThoughts";
 
 function App() {
   return (
@@ -15,10 +15,9 @@ function App() {
       <div className="container">
       <InputThoughts />
       </div>
-      {/* <div className="GetButtonThoughts">
+      <div className="GetButtonThoughts">
         <GetThoughts />
-      </div> */}
-    
+      </div>
     </Fragment>
    
   );

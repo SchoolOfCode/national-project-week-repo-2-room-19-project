@@ -1,27 +1,25 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useState } from "react";
 
-const InputThoughts = () => {
+function InputThoughts() {
 
-const [description, setDescription] = useState("");
+    const [description, setDescription] = useState("");
 
-const onSubmitForm = async (e) => {
-    useEffect(() => {
-    e.preventDefault();
-    try {
-        const body = {description};
-        const response = await fetch("http://localhost:3001/api/", {
-            method: "POST",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify(body)
-        })
+    async function onSubmitForm(e) {
+        e.preventDefault();
+        try {
+            const body = {description};
+            console.log(`submitting ${JSON.stringify(body)}`)
+            const response = await fetch("http://localhost:3001/thoughts/", {
+                method: "POST",
+                headers: { "content-type": "application/json" },
+                body: JSON.stringify(body)
+            })
 
-        console.log(response)
-    } catch (error) {
-        console.error(error.message)
+            console.log(response)
+        } catch (error) {
+            console.error(error.message)
+        }
     }
-},
-    onSubmitForm();
-}, [])
 
     return (
     <Fragment>
@@ -36,7 +34,7 @@ const onSubmitForm = async (e) => {
             <button className="btn btn-success" type="submit">Please add thoughts here</button>
         </form>
     </Fragment>
-);
+    );
 }
 
 export default InputThoughts;
