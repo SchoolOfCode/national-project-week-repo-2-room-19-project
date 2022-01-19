@@ -7,11 +7,11 @@ const [description, setDescripton] = useState("");
 const onSubmitForm = async (e) => {
     e.preventDefault();
     try {
-        const body = {description};
-        const response = await fetch("http://localhost:3000/", {
-            method: "POST",
+        // const body = {description};
+        const response = await fetch("http://localhost:3001/api/", {
+            // method: "POST",
             headers: { "content-type": "application/json" },
-            body: JSON.stringify(body)
+            // body: JSON.stringify(body)
         })
 
         console.log(response)
@@ -30,7 +30,8 @@ const onSubmitForm = async (e) => {
             value={description} 
             onChange={e => setDescripton(e.target.value)}    
             />
-            <button className="btn btn-success">Add</button>
+            <button className="btn btn-success" type="submit">Please add thoughts here</button>
+            <button className="getthoughts">Get my thoughts</button>
         </form>
     </Fragment>
 );
