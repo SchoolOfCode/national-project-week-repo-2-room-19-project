@@ -1,24 +1,27 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 
 const InputThoughts = () => {
 
-const [description, setDescripton] = useState("");
+const [description, setDescription] = useState("");
 
 const onSubmitForm = async (e) => {
+    useEffect(() => {
     e.preventDefault();
     try {
-        // const body = {description};
+        const body = {description};
         const response = await fetch("http://localhost:3001/api/", {
-            // method: "POST",
+            method: "POST",
             headers: { "content-type": "application/json" },
-            // body: JSON.stringify(body)
+            body: JSON.stringify(body)
         })
 
         console.log(response)
     } catch (error) {
         console.error(error.message)
     }
-}
+},
+    onSubmitForm();
+}, [])
 
     return (
     <Fragment>
@@ -28,10 +31,9 @@ const onSubmitForm = async (e) => {
             type="text" 
             className="form-control" 
             value={description} 
-            onChange={e => setDescripton(e.target.value)}    
+            onChange={e => setDescription(e.target.value)}    
             />
             <button className="btn btn-success" type="submit">Please add thoughts here</button>
-            <button className="getthoughts">Get my thoughts</button>
         </form>
     </Fragment>
 );

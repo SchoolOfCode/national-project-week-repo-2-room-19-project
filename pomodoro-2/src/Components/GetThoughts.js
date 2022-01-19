@@ -1,20 +1,24 @@
+import { set } from "express/lib/response";
 import React, { Fragment, useState } from "react";
 
 const GetThoughts = async () => {
 
-const [returnedThoughts, setReturnedThoughts] = useState([]);
+    const [returnedThoughts, setReturnedThoughts] = useState([]);
 
     try {
         const response = await fetch("http://localhost:3001/api/", {
             headers: { "content-type": "application/json" },
-            body: JSON.stringify()
+            
+       // body: JSON.stringify()
         })
+
+        const data = await response.json()
+        setReturnedThoughts(data)
 
         console.log(response)
     } catch (error) {
         console.error(error.message)
     }
-// }
 
     return (
     <Fragment>
