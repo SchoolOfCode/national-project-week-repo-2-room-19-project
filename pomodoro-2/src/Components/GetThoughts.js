@@ -34,7 +34,7 @@ function GetThoughts(props) {
       <button className="getthoughts" type="submit" onClick={handleclick}>
         Get my thoughts
       </button>
-        <div>{returnedThoughts.map((prop) => (<div><p>{prop.thought}</p></div>) )}
+        <div>{returnedThoughts.map((prop) => (<div><p>{prop.thought}</p><p>{prop.date}</p></div>) )}
         </div>
       
     </Fragment>
