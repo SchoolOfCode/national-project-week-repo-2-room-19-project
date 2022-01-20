@@ -1,30 +1,35 @@
 import React, { Fragment, useState } from "react";
 
 function GetThoughts(props) {
-    const [returnedThoughts, setReturnedThoughts] = useState([]);
-    
-    const GetThoughts = async () => {
-        try {
-            const response = await fetch("http://localhost:3001/api/", {
-                headers: { "content-type": "application/json" },   
-        // body: JSON.stringify()
-            })
+  const [returnedThoughts, setReturnedThoughts] = useState([]);
 
-            const data = await response.json()
-            setReturnedThoughts(data)
-
-            console.log(response)
-        } catch (error) {
-            console.error(error.message)
+  const GetThoughts = async () => {
+    try {
+      const response = await fetch(
+        "https://sharp-easley-01b623.netlify.app/api",
+        {
+          headers: { "content-type": "application/json" },
+          // body: JSON.stringify()
         }
-    }
+      );
 
-    return (
+      const data = await response.json();
+      setReturnedThoughts(data);
+
+      console.log(response);
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
+
+  return (
     <Fragment>
-            <button className="getthoughts" type="submit" onClick={GetThoughts}>Get my thoughts</button>
-            {returnedThoughts}      
+      <button className="getthoughts" type="submit" onClick={GetThoughts}>
+        Get my thoughts
+      </button>
+      {returnedThoughts}
     </Fragment>
-    );
+  );
 }
 
 export default GetThoughts;
