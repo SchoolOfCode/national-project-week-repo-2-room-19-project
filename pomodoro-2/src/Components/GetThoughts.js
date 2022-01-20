@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
-
+const API_URL = process.env.REACT_APP_API_URL;
 function GetThoughts(props) {
   const [dirty, setDirty] = useState(false);
 
@@ -8,9 +8,7 @@ function GetThoughts(props) {
   useEffect(() => {
     if (dirty) {
       const thoughtsData = async () => {
-        const response = await fetch(
-          "https://pomodoro-project-19.herokuapp.com/thoughts"
-        );
+        const response = await fetch(`${API_URL}/thoughts`);
         const data = await response.json();
         // console.log(data);
         setReturnedThoughts(data);
