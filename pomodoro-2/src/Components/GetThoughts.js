@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect } from "react";
 
 function GetThoughts(props) {
-  const [dirty, setDirty] = useState(true);
+  const [dirty, setDirty] = useState(false);
 
   const [returnedThoughts, setReturnedThoughts] = useState([]);
 
@@ -12,14 +12,15 @@ function GetThoughts(props) {
           "https://pomodoro-project-19.herokuapp.com/thoughts"
         );
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
         setReturnedThoughts(data);
+        // console.log(returnedThoughts);
         setDirty(false);
       };
       thoughtsData();
     }
   }, [dirty]);
-
+  console.log(returnedThoughts);
   // const handleclick = async () => {
   //   try {
   //     const response = await fetch(
