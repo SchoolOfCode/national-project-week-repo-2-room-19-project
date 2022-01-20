@@ -8,7 +8,10 @@ function GetThoughts(props) {
       const response = await fetch(
         "https://pomodoro-project-19.herokuapp.com/api/",
         {
-          headers: { "content-type": "application/json" },
+          headers: {
+            "content-type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+          },
           // body: JSON.stringify()
         }
       );
