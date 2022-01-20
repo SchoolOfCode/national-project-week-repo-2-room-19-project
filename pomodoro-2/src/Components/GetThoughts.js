@@ -5,10 +5,13 @@ function GetThoughts(props) {
 
   const GetThoughts = async () => {
     try {
-      const response = await fetch("http://localhost:3001/api/", {
-        headers: { "content-type": "application/json" },
-        // body: JSON.stringify()
-      });
+      const response = await fetch(
+        "https://pomodoro-project-19.herokuapp.com/api/",
+        {
+          headers: { "content-type": "application/json" },
+          // body: JSON.stringify()
+        }
+      );
 
       const data = await response.json();
       setReturnedThoughts(data);

@@ -8,11 +8,17 @@ function InputThoughts() {
     try {
       const body = { description };
       console.log(`submitting ${JSON.stringify(body)}`);
-      const response = await fetch("http://localhost:3001/thoughts/", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(body),
-      });
+      const response = await fetch(
+        "https://pomodoro-project-19.herokuapp.com/thoughts",
+        {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+          },
+          body: JSON.stringify(body),
+        }
+      );
 
       console.log(response);
     } catch (error) {
