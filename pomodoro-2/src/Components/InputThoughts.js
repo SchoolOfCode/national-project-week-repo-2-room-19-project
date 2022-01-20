@@ -12,8 +12,11 @@ function InputThoughts() {
         "https://pomodoro-project-19.herokuapp.com/thoughts",
         {
           method: "POST",
-          headers: { "content-type": "application/json","Access-Control-Allow-Origin": "*"  },
-          body: JSON.stringify(body),                
+          headers: {
+            "content-type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+          },
+          body: JSON.stringify(body),
         }
       );
 
