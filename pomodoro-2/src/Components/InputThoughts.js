@@ -1,5 +1,7 @@
 import React, { Fragment, useState } from "react";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 function InputThoughts() {
   const [description, setDescription] = useState("");
 
@@ -9,7 +11,7 @@ function InputThoughts() {
       const body = { description };
       console.log(`submitting ${JSON.stringify(body)}`);
       const response = await fetch(
-        "https://pomodoro-project-19.herokuapp.com/thoughts",
+        `${API_URL}/thoughts`,
         {
           method: "POST",
           headers: {
