@@ -1,8 +1,7 @@
 import React, { Fragment, useState, useEffect } from "react";
 
 function GetThoughts(props) {
-
-  const [dirty, setDirty] = useState(true)
+  const [dirty, setDirty] = useState(true);
 
   const [returnedThoughts, setReturnedThoughts] = useState([]);
 
@@ -10,19 +9,16 @@ function GetThoughts(props) {
     if (dirty) {
       const thoughtsData = async () => {
         const response = await fetch(
-          "https://pomodoro-project-19.herokuapp.com/thoughts",
+          "https://pomodoro-project-19.herokuapp.com/thoughts"
         );
         const data = await response.json();
-        console.log(data)
+        console.log(data);
         setReturnedThoughts(data);
-        setDirty(false)
+        setDirty(false);
       };
       thoughtsData();
     }
-
-    
   }, [dirty]);
-
 
   // const handleclick = async () => {
   //   try {
@@ -33,9 +29,9 @@ function GetThoughts(props) {
   //         // body: JSON.stringify()
   //       }
   //     );
-  
+
   function handleclick() {
-    setDirty(true)
+    setDirty(true);
   }
 
   return (
@@ -43,9 +39,8 @@ function GetThoughts(props) {
       <button className="getthoughts" type="submit" onClick={handleclick}>
         Get my thoughts
       </button>
-      {returnedThoughts}
     </Fragment>
   );
-};
+}
 
 export default GetThoughts;
