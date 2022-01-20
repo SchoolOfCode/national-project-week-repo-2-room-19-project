@@ -21,25 +21,22 @@ function GetThoughts(props) {
     }
   }, [dirty]);
   console.log(returnedThoughts);
-  // const handleclick = async () => {
-  //   try {
-  //     const response = await fetch(
-  //       "https://pomodoro-project-19.herokuapp.com/thoughts",
-  //       {
-  //         headers: { "content-type": "application/json" },
-  //         // body: JSON.stringify()
-  //       }
-  //     );
+ 
 
   function handleclick() {
     setDirty(true);
   }
 
+
   return (
     <Fragment>
+
       <button className="getthoughts" type="submit" onClick={handleclick}>
         Get my thoughts
       </button>
+        <div>{returnedThoughts.map((prop) => (<div><p>{prop.thought}</p></div>) )}
+        </div>
+      
     </Fragment>
   );
 }
