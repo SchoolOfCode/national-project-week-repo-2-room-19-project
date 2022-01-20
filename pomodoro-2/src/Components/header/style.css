@@ -1,0 +1,11 @@
+header {
+  background-color: salmon;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  color: black;
+}
+
+h1 {
+  font-weight: bold;
+}

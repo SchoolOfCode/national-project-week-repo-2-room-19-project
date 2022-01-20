@@ -21,22 +21,24 @@ function GetThoughts(props) {
     }
   }, [dirty]);
   console.log(returnedThoughts);
- 
 
   function handleclick() {
     setDirty(true);
   }
 
-
   return (
     <Fragment>
-
       <button className="getthoughts" type="submit" onClick={handleclick}>
-        Get my thoughts
+        See all notes
       </button>
-        <div>{returnedThoughts.map((prop) => (<div><p>{prop.thought}</p><p>{prop.date}</p></div>) )}
-        </div>
-      
+      <div>
+        {returnedThoughts.map((prop) => (
+          <div className="prev-thoughts">
+            <p className="thought">{prop.thought}</p>
+            <p className="date">{prop.date}</p>
+          </div>
+        ))}
+      </div>
     </Fragment>
   );
 }

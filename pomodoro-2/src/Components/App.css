@@ -2,45 +2,8 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 body {
-  background-color: #5d6061;
-  color: #2ec4b6;
-  height: 100vh;
+  background-color: #414141;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
@@ -56,23 +19,94 @@ body {
 }
 
 .pomodoro {
-  font-size: 6em;
+  font-size: 10em;
+  color: salmon;
 }
 
 .message {
-  font-size: 0.5em;
-  min-height: 1.3em;
+  color: white;
+  font-size: 5vh;
   margin-bottom: 0.5em;
+  margin-top: 2em;
 }
 
-.container {
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
+Button {
+  box-shadow: inset 0px 1px 0px 0px #f7c5c0;
+  background-color: salmon;
+  border-radius: 8px;
+  border: 1px solid #d83526;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #b23e35;
+  margin-left: 1em;
+}
+Button:hover {
+  background-color: #e4685d;
+}
+Button:active {
+  position: relative;
 }
 
-.getThoughts {
-  justify-content: center;
+form {
+  text-align: center;
 }
 
+.label {
+  color: white;
+  font-size: 5vh;
+  text-align: center;
+}
+
+.btn-success {
+  position: relative;
+  top: 3.2vh;
+  right: 11vh;
+}
+
+input {
+  height: 10vw;
+  width: 40%;
+  margin: auto;
+  display: block;
+  border-radius: 20px;
+  font-size: 20px;
+  margin-top: 0;
+}
+
+.getthoughts {
+  position: relative;
+  left: 86vh;
+  top: 0vh;
+}
+
+::placeholder {
+  font-size: 20px;
+}
+
+.prev-thoughts {
+  color: white;
+  text-align: center;
+  padding: 5px;
+  border-style: solid;
+  border-color: white;
+  border-radius: 10px;
+  width: 50%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.thought {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.date {
+  letter-spacing: 1px;
+}
