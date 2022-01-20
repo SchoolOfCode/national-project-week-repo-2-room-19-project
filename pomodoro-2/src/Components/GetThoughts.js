@@ -5,13 +5,10 @@ function GetThoughts(props) {
 
   const GetThoughts = async () => {
     try {
-      const response = await fetch(
-        "https://sharp-easley-01b623.netlify.app/api",
-        {
-          headers: { "content-type": "application/json" },
-          // body: JSON.stringify()
-        }
-      );
+      const response = await fetch("http://localhost:3001/api/", {
+        headers: { "content-type": "application/json" },
+        // body: JSON.stringify()
+      });
 
       const data = await response.json();
       setReturnedThoughts(data);
