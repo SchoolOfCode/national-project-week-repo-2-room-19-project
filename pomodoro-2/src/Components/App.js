@@ -5,21 +5,20 @@ import React, { Fragment } from "react";
 import Pomodoro from "./Pomodoro";
 import InputThoughts from "./InputThoughts";
 import GetThoughts from "./GetThoughts";
+import Header from "./header";
 
 function App() {
   return (
-    <Fragment>
+    <div className="wrap">
       <div className="App">
-      <Pomodoro />
+        <Header />
+        <Pomodoro />
       </div>
-      <div className="container">
-      <InputThoughts />
-      </div>
-      <div className="GetButtonThoughts">
+      <div className="btn">
+        <InputThoughts />
         <GetThoughts />
       </div>
-    </Fragment>
-   
+    </div>
   );
 }
 

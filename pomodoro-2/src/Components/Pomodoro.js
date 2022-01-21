@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
 function Pomodoro() {
-  const [minutes, setMinutes] = useState(25);
-  const [seconds, setSeconds] = useState(0);
+  const [minutes, setMinutes] = useState(0);
+  const [seconds, setSeconds] = useState(5);
   const [displayMessage, setDisplayMessage] = useState(false);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ function Pomodoro() {
           setMinutes(minutes - 1);
         } else {
           //If Message is displaying(displayMessage true) we want to set the timer to 4 minutes 59 and have a break else if (displayMessage false) we want to set the timer to 24 minutes and 59 seconds (when break is over)
-          let minutes = displayMessage ? 24 : 4;
+          let minutes = displayMessage ? 24 : 10;
           let seconds = 59;
 
           setSeconds(seconds);
@@ -38,7 +38,11 @@ function Pomodoro() {
     <div className="pomodoro">
       <div className="message">
         {/* comment -- If displayMessage is true we want to show the div below. if it is false it wont be shown */}
-        {displayMessage && <div>Go take a break! New study session in:</div>}
+        {displayMessage && (
+          <div>
+            <span className="break_txt">Go take a break!</span>
+          </div>
+        )}
       </div>
       <div className="timer">
         {timerMinutes}:{timerSeconds}
