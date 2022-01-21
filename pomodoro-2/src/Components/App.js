@@ -9,18 +9,16 @@ import Header from "./header";
 
 function App() {
   return (
-    <>
+    <div className="wrap">
       <div className="App">
         <Header />
         <Pomodoro />
       </div>
-      <div>
+      <div className="btn">
         <InputThoughts />
-      </div>
-      <div>
         <GetThoughts />
       </div>
-    </>
+    </div>
   );
 }
 

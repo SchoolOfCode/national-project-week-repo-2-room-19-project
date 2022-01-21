@@ -26,9 +26,17 @@ function GetThoughts(props) {
 
   return (
     <Fragment>
-      <button className="getthoughts" type="submit" onClick={handleclick}>
-        See all notes
-      </button>
+      <div className="pompdoro_btn_wrap ">
+        <div className="pompdoro_btn">
+          <button
+            className="get_thoughts_btn "
+            type="submit"
+            onClick={handleclick}
+          >
+            <span className="get_thoughts_btn_txt">See all notes ↓</span>
+          </button>
+        </div>
+      </div>
       <div>
         {returnedThoughts.map((prop) => (
           <div className="prev-thoughts">

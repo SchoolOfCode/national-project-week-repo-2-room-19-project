@@ -4,11 +4,21 @@
 
 body {
   background-color: #414141;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: "Chakra Petch", sans-serif;
+  font-family: "Lato", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-family: "Pacifico", cursive;
+  font-family: "Righteous", cursive;
+  margin: 0;
 }
 
 #root {
   height: 100%;
+  width: 100%;
+}
+
+.wrap {
+  margin: auto;
 }
 
 .App {
@@ -16,40 +26,56 @@ body {
   height: 100%;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+header {
+  background-color: #3b3b3b;
+  width: 100%;
+  color: rgb(255, 255, 255);
+}
+
+#logo {
+  font-weight: bold;
+  font-family: "Chakra Petch";
+  font-size: 30px;
+  margin-left: 30px;
 }
 
 .pomodoro {
-  font-size: 10em;
-  color: salmon;
+  font-size: 6em;
+  color: #ffbb00;
+  font-family: "lato";
+  width: 100%;
 }
 
 .message {
   color: white;
-  font-size: 5vh;
-  margin-bottom: 0.5em;
-  margin-top: 2em;
+  font-size: 40px;
+  font-weight: 300;
 }
 
-Button {
-  box-shadow: inset 0px 1px 0px 0px #f7c5c0;
-  background-color: salmon;
-  border-radius: 8px;
-  border: 1px solid #d83526;
-  display: inline-block;
-  cursor: pointer;
-  color: #ffffff;
-  font-family: Arial;
-  font-size: 15px;
-  font-weight: bold;
-  padding: 6px 24px;
-  text-decoration: none;
-  text-shadow: 0px 1px 0px #b23e35;
-  margin-left: 1em;
+.break_txt {
+  color: #111;
+  font-size: 40px;
+  font-weight: 900;
+  display: block;
+  padding: 15px;
+  background-color: #ffbb00;
 }
-Button:hover {
-  background-color: #e4685d;
+
+.message_txt {
+  display: block;
+  padding: 70px 0 0 0;
 }
-Button:active {
+
+.get_thoughts_btn:hover {
+  background-color: #ffbb00;
+  border: none;
+  color: #222;
+}
+
+.get_thoughts_btn:active {
   position: relative;
 }
 
@@ -57,10 +83,15 @@ form {
   text-align: center;
 }
 
+.timer {
+  margin-top: 50px;
+}
+
 .label {
   color: white;
-  font-size: 5vh;
+  font-size: 50px;
   text-align: center;
+  margin: 50px 0 10px;
 }
 
 .btn-success {
@@ -70,43 +101,97 @@ form {
 }
 
 input {
-  height: 10vw;
-  width: 40%;
+  width: 30%;
   margin: auto;
-  display: block;
-  border-radius: 20px;
+  border-radius: 10px;
   font-size: 20px;
   margin-top: 0;
-}
-
-.getthoughts {
-  position: relative;
-  left: 86vh;
-  top: 0vh;
+  padding: 20px;
+  height: 5px;
+  font-family: "lato";
+  border-style: none;
 }
 
 ::placeholder {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .prev-thoughts {
   color: white;
   text-align: center;
   padding: 5px;
-  border-style: solid;
-  border-color: white;
-  border-radius: 10px;
+  border-top: 1px dashed #666;
   width: 50%;
   margin: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .thought {
-  font-weight: bold;
+  font-weight: 500;
   font-size: 20px;
+  font-family: "Chakra Petch";
+  margin-top: 40px;
 }
 
 .date {
   letter-spacing: 1px;
+  font-family: "Lato";
+  font-weight: 300;
+  font-size: 15px;
+  color: #bbb;
+}
+
+.pompdoro_btn_wrap {
+  text-align: center;
+  padding-top: 25px;
+  height: 120px;
+}
+
+.pompdoro_btn {
+  padding: 20px;
+  animation: motion 0.5s linear 0s infinite alternate;
+  margin-top: 0;
+}
+
+.submit_btn {
+  height: 45px;
+  padding: 10px 30px;
+  font-size: 20px;
+  font-family: "lato";
+  border-radius: 10px;
+  margin: 10px;
+  border-style: none;
+  background: #ef6950;
+  color: #fff;
+}
+
+.submit_btn:hover {
+  background-color: #f03a17;
+}
+
+.get_thoughts_btn {
+  padding: 10px;
+  margin: auto;
+  display: block;
+  color: #fff;
+  border-radius: 35px;
+  background: transparent;
+  border-style: dotted;
+  height: 100%;
+}
+
+.get_thoughts_btn_txt {
+  padding: 0 40px;
+  font-size: 30px;
+  font-family: "Chakra Petch";
+}
+
+@keyframes motion {
+  0% {
+    margin-top: 0px;
+  }
+  100% {
+    margin-top: 10px;
+  }
 }

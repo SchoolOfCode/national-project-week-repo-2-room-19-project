@@ -4,7 +4,7 @@ import "./style.css";
 function Header() {
   return (
     <header>
-      <h1>Pomodoro Thoughts 🍅</h1>
+      <h1 id="logo">POMODORO Thoughts 🍅</h1>
     </header>
   );
 }

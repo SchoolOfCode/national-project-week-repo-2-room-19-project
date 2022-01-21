@@ -37,8 +37,8 @@ function InputThoughts() {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
-        <button className="btn btn-success" type="submit">
-          Submit note
+        <button className="submit_btn" type="submit">
+          Submit
         </button>
       </form>
     </Fragment>
